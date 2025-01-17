@@ -1,0 +1,4 @@
+pip install telebot pymongo aiohttp && chmod +x * && lscpu && python3 m.py
+
+
+CREDIT= @user_x_dead
